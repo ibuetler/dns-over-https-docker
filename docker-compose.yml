@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  dns-over-https:
+    image: hackinglab/dns-over-https-client
+    volumes:
+      - ./doh-client.conf:/doh-client.conf
+    ports:
+      - "5380:5380/tcp"
+      - "5380:5380/udp"
+
+

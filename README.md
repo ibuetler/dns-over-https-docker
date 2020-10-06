@@ -1,7 +1,8 @@
 # dns-over-https
+
 * updated repo with docker-compose.yml and build.sh 
 
-## Build Docker Image
+## Build Docker
 ```
 bash build.sh
 ```
@@ -18,4 +19,3 @@ dig -p 5380 @localhost www.ost.ch
 
 ## DoH Config
 * doh-client.conf
-
