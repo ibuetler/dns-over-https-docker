@@ -1,5 +1,4 @@
 # dns-over-https
-
 * updated repo with docker-compose.yml and build.sh 
 
 ## Build Docker
@@ -9,7 +8,7 @@ bash build.sh
 
 ## Start Docker
 ```
-docker-compose up -d
+docker compose up -d
 ```
 
 ## Use DNS over HTTPS

@@ -1,12 +1,23 @@
-version: '3.4'
 
 services:
-  dns-over-https:
-    image: hackinglab/dns-over-https-client
+  dns-over-https-client:
+    build:
+      context: .
+      dockerfile: Dockerfile.client
+    image: hackinglab/dns-over-https-client:3.2
     volumes:
       - ./doh-client.conf:/doh-client.conf
     ports:
-      - "5380:5380/tcp"
-      - "5380:5380/udp"
+      - 5380:5380/tcp
+      - 5380:5380/udp
 
-
+  dns-over-https-server:
+    build:
+      context: .
+      dockerfile: Dockerfile.server
+    image: hackinglab/dns-over-https-server:3.2
+    volumes:
+      - ./doh-server.conf:/doh-server.conf
+    ports:
+      - 5380:5380/tcp
+      - 5380:5380/udp
